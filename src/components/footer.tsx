@@ -34,8 +34,26 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-white/5 py-4 text-center text-xs text-slate-500">
-        © {new Date().getFullYear()} LumineStream · Your Anime Paradise
+      <div className="border-t border-white/5 py-4 px-4 md:px-6">
+        <div className="mx-auto flex max-w-7xl items-center justify-between">
+          <p className="text-xs text-slate-500">© {new Date().getFullYear()} LumineStream · Your Anime Paradise</p>
+          <a
+            href="https://aethereads.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-right group"
+          >
+            <p
+              className="text-sm font-bold text-blue-400"
+              style={{ textShadow: "0 0 8px rgba(96,165,250,0.9), 0 0 20px rgba(96,165,250,0.6)" }}
+            >
+              Your Comic Paradise
+            </p>
+            <p className="text-xs text-slate-400 group-hover:text-blue-400 transition-colors">
+              click here →
+            </p>
+          </a>
+        </div>
       </div>
     </footer>
   );
