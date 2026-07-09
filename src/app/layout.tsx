@@ -6,7 +6,6 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-<<<<<<< HEAD
     default: "LumineStream · Nonton Anime Sub Indo Gratis",
     template: "%s · LumineStream",
   },
@@ -32,13 +31,6 @@ export const metadata: Metadata = {
     title: "LumineStream · Your Anime Paradise",
     description: "Nonton anime gratis subtitle Indonesia",
   },
-=======
-    default: "Luminime · Nonton Anime Sub Indo Gratis",
-    template: "%s · Luminime",
-  },
-  description:
-    "Nonton anime gratis subtitle Indonesia. Jadwal rilis, ongoing, complete, genre, batch download, dan streaming episode.",
->>>>>>> 0d9345cae6bf08afb94e61071e06518b2f041563
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
