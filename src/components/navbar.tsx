@@ -4,7 +4,10 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 import { cn } from "@/lib/utils";
+<<<<<<< HEAD
 import { Logo, LogoIcon } from "@/components/logo";
+=======
+>>>>>>> 0d9345cae6bf08afb94e61071e06518b2f041563
 
 const links = [
   { href: "/", label: "Home" },
@@ -32,6 +35,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0c0610]/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 md:px-6">
+<<<<<<< HEAD
         <Link href="/" className="flex items-center shrink-0">
           {/* Desktop logo with text */}
           <div className="hidden sm:block">
@@ -40,6 +44,15 @@ export function Navbar() {
           {/* Mobile logo icon only */}
           <div className="block sm:hidden">
             <LogoIcon size={50} />
+=======
+        <Link href="/" className="flex items-center gap-2 shrink-0">
+          <span className="grid h-10 w-10 place-items-center rounded-2xl bg-gradient-to-br from-rose-400 via-pink-400 to-rose-300 text-lg font-black text-white shadow-lg shadow-rose-400/25">
+            L
+          </span>
+          <div className="hidden sm:block">
+            <p className="text-sm font-bold tracking-wide text-white">Luminime</p>
+            <p className="text-[11px] text-slate-400">Sub Indo Streaming</p>
+>>>>>>> 0d9345cae6bf08afb94e61071e06518b2f041563
           </div>
         </Link>
 
