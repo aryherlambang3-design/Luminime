@@ -7,24 +7,29 @@ interface LogoProps {
   showText?: boolean;
 }
 
-export function Logo({ className = "", size = 160, showText = true }: LogoProps) {
+export function Logo({ className = "", size = 140, showText = true }: LogoProps) {
   return (
     <div className={`flex items-center gap-4 ${className}`}>
       {/* Anime Character Image */}
-      <div 
-        className="relative flex items-center justify-center shrink-0"
-        style={{ width: size, height: size }}
+      <div
+        className="relative flex-shrink-0 overflow-hidden rounded-3xl"
+        style={{
+          width: size,
+          height: size,
+          boxShadow: "0 0 20px 4px rgba(236, 72, 153, 0.5), 0 0 40px 8px rgba(236, 72, 153, 0.2)",
+          border: "1.5px solid rgba(236, 72, 153, 0.4)",
+          background: "#000",
+        }}
       >
         <Image
-          src="/logo.jpg"
+          src="/logo.png"
           alt="LumineStream Logo"
-          width={size}
-          height={size}
-          className="object-contain"
+          fill
+          className="object-contain object-bottom scale-[1.9]"
           priority
         />
       </div>
-      
+
       {/* Text Logo */}
       {showText && (
         <div className="flex flex-col leading-none">
@@ -39,6 +44,6 @@ export function Logo({ className = "", size = 160, showText = true }: LogoProps)
 }
 
 // Icon only version (untuk navbar mobile, dll)
-export function LogoIcon({ className = "", size = 80 }: { className?: string; size?: number }) {
+export function LogoIcon({ className = "", size = 90 }: { className?: string; size?: number }) {
   return <Logo className={className} size={size} showText={false} />;
 }

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type Props = {
   eyebrow?: string;
   title: string;
@@ -6,9 +8,21 @@ type Props = {
 
 export function PageHero({ eyebrow, title, description }: Props) {
   return (
-    <section className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-rose-500/12 via-pink-400/8 to-rose-300/6 p-6 md:p-8">
-      <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-rose-400/12 blur-3xl" />
-      <div className="absolute -bottom-12 left-10 h-40 w-40 rounded-full bg-pink-300/8 blur-3xl" />
+    <section className="relative overflow-hidden rounded-[2rem] border border-white/10 p-6 md:p-8">
+      {/* Background image */}
+      <Image
+        src="/header.png"
+        alt="Hero Background"
+        fill
+        className="object-cover"
+        priority
+        unoptimized
+      />
+      {/* Overlay agar text tetap terbaca */}
+      <div className="absolute inset-0 bg-black/50 rounded-[2rem]" />
+      {/* Glow decorations */}
+      <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-rose-400/20 blur-3xl" />
+      <div className="absolute -bottom-12 left-10 h-40 w-40 rounded-full bg-pink-300/15 blur-3xl" />
       <div className="relative">
         {eyebrow ? (
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-rose-300">

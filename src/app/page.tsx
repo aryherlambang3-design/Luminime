@@ -15,12 +15,14 @@ export default async function HomePage() {
 
   const ongoing = home.data.ongoing.animeList ?? [];
   const completed = home.data.completed.animeList ?? [];
-  const today =
-    schedule?.data?.find((day) =>
-      ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"].includes(
-        day.day,
-      ),
-    ) || schedule?.data?.[0];
+  
+  // Get today's day name in Indonesian
+  const todayIndex = new Date().getDay(); // 0=Sunday, 1=Monday, etc
+  const dayNames = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+  const todayName = dayNames[todayIndex];
+  
+  // Find today's schedule
+  const today = schedule?.data?.find((day) => day.day === todayName) || schedule?.data?.[0];
   const genreList = genres?.data?.genreList?.slice(0, 12) ?? [];
 
   return (

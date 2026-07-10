@@ -35,11 +35,11 @@ export function Navbar() {
         <Link href="/" className="flex items-center shrink-0">
           {/* Desktop logo with text */}
           <div className="hidden sm:block">
-            <Logo size={60} showText={true} />
+            <Logo size={80} showText={true} />
           </div>
           {/* Mobile logo icon only */}
           <div className="block sm:hidden">
-            <LogoIcon size={50} />
+            <LogoIcon size={64} />
           </div>
         </Link>
 
