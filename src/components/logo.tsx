@@ -33,10 +33,10 @@ export function Logo({ className = "", size = 140, showText = true }: LogoProps)
       {/* Text Logo */}
       {showText && (
         <div className="flex flex-col leading-none">
-          <span className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+          <span className="text-base sm:text-xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
             LumineStream
           </span>
-          <span className="text-xs text-pink-300">Your Anime Paradise</span>
+          <span className="text-[10px] sm:text-xs text-pink-300">Your Anime Paradise</span>
         </div>
       )}
     </div>

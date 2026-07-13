@@ -35,10 +35,10 @@ export function Navbar() {
         <Link href="/" className="flex items-center shrink-0">
           {/* Responsive logo */}
           <div className="sm:hidden">
-            <Logo size={70} showText={true} />
+            <Logo size={50} showText={true} />
           </div>
           <div className="hidden sm:block">
-            <Logo size={140} showText={true} />
+            <Logo size={70} showText={true} />
           </div>
         </Link>
 
