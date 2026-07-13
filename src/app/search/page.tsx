@@ -24,29 +24,41 @@ export default async function SearchPage({ searchParams }: Props) {
     try {
       const result = await searchAnime(query);
       list = result.data.animeList ?? [];
-      await db
-        .insert(searchHistory)
-        .values({
-          query: query.toLowerCase(),
-          resultCount: list.length,
-        })
-        .onConflictDoUpdate({
-          target: searchHistory.query,
-          set: {
+      
+      // Try to save search history, but don't fail if DB unavailable
+      try {
+        await db
+          .insert(searchHistory)
+          .values({
+            query: query.toLowerCase(),
             resultCount: list.length,
-            createdAt: new Date(),
-          },
-        });
+          })
+          .onConflictDoUpdate({
+            target: searchHistory.query,
+            set: {
+              resultCount: list.length,
+              createdAt: new Date(),
+            },
+          });
+      } catch (dbError) {
+        console.error("Failed to save search history:", dbError);
+      }
     } catch (err) {
       error = err instanceof Error ? err.message : "Gagal mencari anime";
     }
   }
 
-  const history = await db
-    .select()
-    .from(searchHistory)
-    .orderBy(desc(searchHistory.createdAt))
-    .limit(10);
+  // Try to get search history, but don't fail if DB unavailable
+  let history: typeof searchHistory.$inferSelect[] = [];
+  try {
+    history = await db
+      .select()
+      .from(searchHistory)
+      .orderBy(desc(searchHistory.createdAt))
+      .limit(10);
+  } catch (dbError) {
+    console.error("Failed to load search history:", dbError);
+  }
 
   return (
     <div className="space-y-8">
