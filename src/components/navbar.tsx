@@ -33,13 +33,12 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0c0610]/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 md:px-6">
         <Link href="/" className="flex items-center shrink-0">
-          {/* Desktop logo with text */}
-          <div className="hidden sm:block">
-            <Logo size={80} showText={true} />
+          {/* Responsive logo */}
+          <div className="sm:hidden">
+            <Logo size={70} showText={true} />
           </div>
-          {/* Mobile logo icon only */}
-          <div className="block sm:hidden">
-            <LogoIcon size={64} />
+          <div className="hidden sm:block">
+            <Logo size={140} showText={true} />
           </div>
         </Link>
 
