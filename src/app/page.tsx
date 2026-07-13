@@ -33,40 +33,6 @@ export default async function HomePage() {
         description="Temukan anime ongoing terbaru, jadwal rilis harian, koleksi anime tamat, genre lengkap, batch download, dan streaming multi-server di Luminime."
       />
 
-      <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        {[
-          {
-            href: "/ongoing",
-            title: "Sedang Tayang",
-            desc: "Episode ongoing terbaru",
-          },
-          {
-            href: "/complete",
-            title: "Anime Tamat",
-            desc: "Series completed per halaman",
-          },
-          {
-            href: "/jadwal",
-            title: "Jadwal Rilis",
-            desc: "Update harian Senin–Minggu",
-          },
-          {
-            href: "/all",
-            title: "Semua Anime",
-            desc: "Katalog A–Z lengkap",
-          },
-        ].map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="rounded-3xl border border-white/10 bg-white/[0.04] p-5 transition hover:border-rose-300/25 hover:bg-white/[0.07]"
-          >
-            <p className="font-semibold text-white">{item.title}</p>
-            <p className="mt-1 text-sm text-slate-400">{item.desc}</p>
-          </Link>
-        ))}
-      </section>
-
       <section>
         <SectionHeader
           title="Anime Ongoing"
